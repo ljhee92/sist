@@ -98,6 +98,8 @@ replay_pid*
 .DS_Store
 .AppleDouble
 .LSOverride
+.classpath
+.project
 
 # Icon must end with two \r
 Icon
