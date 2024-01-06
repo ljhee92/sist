@@ -10,6 +10,9 @@ public class Operator2 {
 		
 		int i = 10;
 		System.out.println(i + "를 2로 나눈 나머지: " + (i % 2));	// 0 또는 1
+		i = 11;
+		System.out.println(i + "를 2로 나눈 나머지: " + (i % 2));	// 0 또는 1
+
 
 	}	// main
 
