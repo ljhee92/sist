@@ -3,8 +3,17 @@ package day0103;
 public class HomeWork0103 {
 	
 	// 기본 요금 상수로 정의
+	/**
+	 * 마을버스 기본요금 
+	 */
 	public static final int VILLAGE_BUS = 1200;
+	/**
+	 * 버스 기본요금
+	 */
 	public static final int BUS = 1500;
+	/**
+	 * 지하철 기본요금 
+	 */
 	public static final int SUBWAY = 1400;
 
 	public static void main(String[] args) {
