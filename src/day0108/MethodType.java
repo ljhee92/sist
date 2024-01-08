@@ -56,7 +56,7 @@ public class MethodType {
 		i = mt.typeC();
 		System.out.println("고정 값: " + i);
 		int j = mt.typeC();
-		System.out.println("고정 값: " + i);
+		System.out.println("고정 값: " + j);
 		
 		
 		// 가변 값 method 호출 -> 반환형에 일치하는 데이터형으로 변수를 만들고, 반환값을 저장하여 사용한다.
