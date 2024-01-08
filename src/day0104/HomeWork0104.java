@@ -38,6 +38,14 @@ public class HomeWork0104 {
 			System.out.println();
 		}	// end for
 		
+		for(int i = 0; i < 6; i++) {
+			System.out.println(i);
+			for(int j = 0; j <= i; j++) {
+				System.out.print(" ");
+			}	// end for
+		}	// end for
+		System.out.println();
+		
 		
 		// 3. 1에서부터 100까지의 수 중 3의 배수 합을 출력
 		
