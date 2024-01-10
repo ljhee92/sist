@@ -78,7 +78,7 @@ public class MarkerPen {
 	 * @return 쓰는 일
 	 */
 	public String write(String msg) {
-		return "\"" + msg + "\"" + "를 " + color + "색 펜으로 칠판에 쓴다.";
+		return "\"" + msg + "\"" + "을/를 " + color + "색 펜으로 칠판에 쓴다.";
 	}	// write
 
 }	// class
