@@ -10,9 +10,10 @@ public class MarkerPen {
 	 * 뚜껑 1개, 몸체 1개, 검은색 마카펜을 생성할 때 사용하는 기본 생성자
 	 */
 	public MarkerPen() {
-		cap = 1;
-		body = 1;
-		color = "검은";
+//		cap = 1;
+//		body = 1;
+//		color = "검은";
+		this(1, 1, "검은");	// this를 사용하여 코드 중복을 줄일 수 있다.
 	}	// MarkerPen
 	
 	

@@ -17,9 +17,10 @@ public class Person {
 	 * 눈 2개, 코 1개, 입 1개인 사람 객체를 생성할 때 사용하는 기본 생성자(Default Constructor)
 	 */
 	public Person() {
-		this.eye = 2;
-		this.nose = 1;
-		this.mouth = 1;
+//		this.eye = 2;
+//		this.nose = 1;
+//		this.mouth = 1;
+		this(2, 1, 1);
 	}	// Person
 	
 	

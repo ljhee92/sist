@@ -5,6 +5,10 @@ package day0110;
  */
 
 public class CallByValue {
+	
+//	public CallByValue(int i) {
+//		System.out.println("개발자가 매개변수 있는 생성자를 정의하면 Compiler가 기본 생성자를 만들어주지 않는다.");
+//	}	// CallByValue
 
 	/**
 	 * i와 j를 입력 받아 두 변수의 값을 바꾸는 일
@@ -22,7 +26,7 @@ public class CallByValue {
 	public static void main(String[] args) {
 
 		// swap method 호출을 위한 객체 생성
-		CallByValue cbv = new CallByValue();
+		CallByValue cbv = new CallByValue();	// ->  9행에서 매개변수 있는 생성자를 생성하면 기본 생성자를 호출하는 본 행은 error!
 		
 		int i = 2024, j = 1;
 		
