@@ -13,7 +13,8 @@ public class ThisConstructor {
 	
 	
 	public ThisConstructor(int i) {
-		this();
+//		new ThisConstructor();	// 여러 개의 객체를 생성하여 여러 생성자를 호출 -> 객체가 여러 개 생성된다. -> 쓸데없이 메모리 사용이 증가한다.
+		this();		// 생성자의 첫 번째 줄에서만 사용한다.	// 하나의 객체를 생성하여 여러 생성자를 호출 -> 객체가 하나만 생성된다.
 		System.out.println("매개변수 있는 생성자 " + i);
 	}	// ThisConstructor
 

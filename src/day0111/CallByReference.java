@@ -11,9 +11,9 @@ public class CallByReference {
 	
 	public void swap(CallByReference cbr) {
 		int temp = 0;
-		temp = cbr.i;
-		cbr.i = cbr.j;
-		cbr.j = temp;
+		temp = cbr.i;	// 2024
+		cbr.i = cbr.j;	// 1
+		cbr.j = temp;	// 2024
 		System.out.println("swap 안 i: " + cbr.i + ", j: " + cbr.j);
 	}	// swap
 
@@ -30,7 +30,6 @@ public class CallByReference {
 		
 		System.out.println("swap 후 i: " + cbr.i + ", j: " + cbr.j);
 		
-
 	}	// main
 
 }	// class
