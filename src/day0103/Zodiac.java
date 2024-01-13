@@ -55,6 +55,6 @@ public class Zodiac {
 	/**
 	 *  양 
 	 */
-	public static final int GOAT = 10;		// 기준값 
+	public static final int GOAT = 11;		// 기준값 
 
 }	// class
