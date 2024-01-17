@@ -44,6 +44,22 @@ public class UsePerson {
 		System.out.println(juhee.sleep(5) + ", 현재 피곤함 정도: " + juhee.getTiredness());
 		System.out.println(juhee.sleep(4) + ", 현재 피곤함 정도: " + juhee.getTiredness());
 		
+		System.out.println("------------------------------");
+
+		
+		// 코드의 재 사용성 : 부모클래스에 존재하는 변수나 method를 자식 클래스에서 자식의 객체명으로 사용하는 것.
+		// -> 부모에서 제공하는 기능이 자식과 맞지 않는 상황 발생!!
+		System.out.println(hgd.eat());
+		System.out.println(hgd.eat("국밥", 3));
+		System.out.println(c.eat());
+		System.out.println(c.eat("스테이크", 10));
+		
+		System.out.println("------------------------------");
+
+		// toString() method 사용하여 hgd(객체)를 출력했을 때, 객체가 가리키는 주소가 아니라 "나는 홍길동이다."가 출력되도록 변경.
+		System.out.println(hgd);
+		System.out.println(c);
+		
 	}	// usePerson
 
 	public static void main(String[] args) {

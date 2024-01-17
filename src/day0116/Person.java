@@ -1,7 +1,7 @@
 package day0116;
 
 /**
- * 사람을 추상화하여 구현하는 클래스 <br>
+ * 사람을 추상화하여 구현하는 클래스 -> 사람의 공통적인 특징만 정의 <br>
  *  - 명사적 특징: 눈, 코, 입 <br>
  *  - 동사적 특징: 먹는 일 <br>
  *  <br>
@@ -130,5 +130,15 @@ public class Person {
 	public String eat(String menu, int price) {
 		return name + "이/가 식당에서 " + menu + "을/를 " + price + "원 주고 사먹는다.";
 	}	// eat
+
+
+	/**
+	 * UsePerson class에서 toString() method로 어느 사람을 찍어도 닝겐이 나오도록 Override <br>
+	 * 홍길동처럼 자식클래스에 또 toString() method가 Override 되어있다면 자식클래스의 method 호출
+	 */
+	@Override
+	public String toString() {
+		return "닝겐입니다.";
+	}	// toString
 
 }	// class

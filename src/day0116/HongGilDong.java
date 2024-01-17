@@ -44,5 +44,21 @@ public class HongGilDong extends Person {
 	public int getLevel() {
 		return level;
 	}	// getLevel
+
+	/**
+	 * 식당에서 화폐단위가 원인 일에서 주막에서 화폐단위가 푼인 일로 Override
+	 */
+	@Override
+	public String eat(String menu, int price) {
+		return getName() + "이 주막에서 " + menu + "을 " + price + "푼 주고 사먹는다.";
+	}	// eat
+
+	/**
+	 * 최상위 부모클래스인 Object의 toString() method를 Override
+	 */
+	@Override
+	public String toString() {
+		return "나는 홍길동이다";
+	}	// toString
 	
 }	// class

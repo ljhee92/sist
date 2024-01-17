@@ -35,5 +35,21 @@ public class Clark extends Person {
 		
 		return result;
 	}	// power
+
+	/**
+	 * 집에서 밥을 먹는 일에서 빵을 먹는 일로 Override
+	 */
+	@Override
+	public String eat() {
+		return getName() + "가 집에서 빵을 먹는다.";
+	}	// eat 
+
+	/**
+	 * 식당에서 화폐단위가 원인 일에서 레스토랑에서 화폐단위가 $인 일로 Override 
+	 */
+	@Override
+	public String eat(String menu, int price) {
+		return getName() + "이 레스토랑에서 " + menu + "을 " + price + "$ 주고 사먹는다.";
+	}
 	
 }	// class

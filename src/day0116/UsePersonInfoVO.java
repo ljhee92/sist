@@ -13,23 +13,23 @@ public class UsePersonInfoVO {
 		piVOArr[4] = new PersonInfoVO("양수민", "경기도 부천시 부천동", 25);
 		piVOArr[5] = new PersonInfoVO("진수현", "서울시 동대문구 동대문동", 27);
 		piVOArr[6] = new PersonInfoVO("수연", "서울시 구로구 구로동", 26);
-		
-		// 이름, 주소, 나이 값을 출력
-		for(PersonInfoVO piVO : piVOArr) {
-			System.out.printf("%s, %s, %d\n", piVO.getName(), piVO.getAddress(), piVO.getAge());
-		}	// end for
-		
+				
+		printAllInfo(piVOArr);
 		System.out.println("-------------------------------");		
 		System.out.println("이름에 수가 들어가는 사람의 수: " + nameSu(piVOArr) + "명");
-		System.out.println("-------------------------------");
 		System.out.println("서울시에 살고 있는 사람의 수: " + addressSeoul(piVOArr) + "명");
-		System.out.println("-------------------------------");
 		System.out.println("나이의 합산: " + totalAge(piVOArr) + "살");
 		
 	}	// printPersonInfoVO
 	
-	public void printInfo() {
-		
+	/**
+	 * 이름, 주소, 나이 값을 출력하는 일
+	 * @param piVOArr
+	 */
+	public void printAllInfo(PersonInfoVO[] piVOArr) {
+		for(PersonInfoVO piVO : piVOArr) {
+			System.out.println(piVO.getName() + ", " + piVO.getAddress() + ", " + piVO.getAge());
+		}	// end for
 	}	// printInfo
 	
 	/**
