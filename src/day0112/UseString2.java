@@ -102,6 +102,20 @@ public class UseString2 {
 		temp = String.valueOf(d);
 		System.out.println(temp);
 		
+		
+		// 일정한 문자를 기준으로 문자열을 자를 때: split()
+		String csvData = "Java,Oracle,JDBC,HTML,CSS,JavaScript";
+		String[] arr = csvData.split(",");
+//		String[] arr = "Java,Oracle,JDBC,HTML,CSS,JavaScript".split(",");
+		for(String data : arr) {
+			System.out.println(data);
+		}	// end for
+		
+		String[] arr2 = "어쩔.저쩔.뇌절.안물.안궁.개킹받쥬".split("[.]");
+		for(String data : arr2) {
+			System.out.println(data);
+		}	// end for
+		
 	}	// main
 
 }	// UseString2

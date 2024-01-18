@@ -22,15 +22,15 @@ public class UsePerson {
 		
 		System.out.println("------------------------------");
 		
-		Clark c = new Clark();
+		Clark superman = new Clark();
 		
-		c.setName("클락켄트");
-		System.out.printf("눈 %d개, 코 %d개, 입 %d개, 이름 %s\n", c.getEye(), c.getNose(), c.getMouth(), c.getName());
+		superman.setName("클락켄트");
+		System.out.printf("눈 %d개, 코 %d개, 입 %d개, 이름 %s\n", superman.getEye(), superman.getNose(), superman.getMouth(), superman.getName());
 		
-		System.out.println(c.power("다이아몬드"));	//10
-		System.out.println(c.power("크립토나이트"));	// 0
-		System.out.println(c.power("짱돌"));	//12
-		System.out.println(c.power);	// power는 접근지정자 public이므로 바로 접근 가능 
+		System.out.println(superman.power("다이아몬드"));	//10
+		System.out.println(superman.power("크립토나이트"));	// 0
+		System.out.println(superman.power("짱돌"));	//12
+		System.out.println(superman.power);	// power는 접근지정자 public이므로 바로 접근 가능 
 		
 		System.out.println("------------------------------");
 
@@ -39,14 +39,18 @@ public class UsePerson {
 		// -> 부모에서 제공하는 기능이 자식과 맞지 않는 상황 발생!!
 		System.out.println(hgd.eat());
 		System.out.println(hgd.eat("국밥", 3));
-		System.out.println(c.eat());
-		System.out.println(c.eat("스테이크", 10));
+		System.out.println(superman.eat());
+		System.out.println(superman.eat("스테이크", 10));
 		
 		System.out.println("------------------------------");
 
 		// toString() method 사용하여 hgd(객체)를 출력했을 때, 객체가 가리키는 주소가 아니라 "나는 홍길동이다."가 출력되도록 변경.
 		System.out.println(hgd);
-		System.out.println(c);
+		System.out.println(superman);
+		
+		System.out.println("------------------------------");
+		System.out.println(superman.getName() + "가 추진력을 얻는 방법: " + superman.drivingForce());
+		System.out.println(superman.getName() + "가 양력을 얻는 방법: " + superman.lift());
 		
 	}	// usePerson
 
