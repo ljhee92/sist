@@ -29,7 +29,6 @@ public class Chihuahua extends Dog {
 		return result;
 	}	// angry 
 	
-	
 
 	public int getAngryLevel() {
 		return angryLevel;

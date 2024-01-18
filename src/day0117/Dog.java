@@ -1,7 +1,7 @@
 package day0117;
 
 /**
- *  개를 대상으로 추상화한 클래스 
+ *  개를 대상으로 추상화한 클래스 -> 직접 객체화 불가능!
  */
 
 @SuppressWarnings("unused")
