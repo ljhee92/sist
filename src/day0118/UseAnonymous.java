@@ -31,6 +31,10 @@ public class UseAnonymous {
 			public String lift() {
 				return "양려어어어억";
 			}});
+		
+		// method가 여러 번 불릴 때에는 클래스 만들어 호출
+		Fly fly = new FlyImpl();
+		ua.testFly(fly);
 
 	}	// main
 

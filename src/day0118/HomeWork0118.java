@@ -1,8 +1,15 @@
 package day0118;
 
-import java.util.Arrays;
+//import java.util.Arrays;
 
 public class HomeWork0118 {
+	
+	public static final int PASSWORDLENGTH = 8;
+	public static final int DECIMAL = 0;
+	public static final int UPPERCASE = 1;
+	public static final int LOWERCASE = 2;
+	public static final int LOTTOLENGTH = 6;
+	
 	
 	public HomeWork0118() {		
 	}	// HomeWork0118
@@ -11,7 +18,7 @@ public class HomeWork0118 {
 	 *  데이터 배열에서 임의의 값 하나를 출력하는 일
 	 */
 	public void printMzArr() {
-		String[] mzArr = {"어쩔티비", "저쩔티비", "뇌절티비", "안물티비", "안궁티비", "때리고싶쥬~", "못때리쥬~", "개킹받쥬~"};
+		String[] mzArr = "어쩔티비,저쩔티비,뇌절티비,안물티비,안궁티비,때리고싶쥬~,못때리쥬~,개킹받쥬~".split(",");
 		System.out.println(mzArr[(int)(Math.random()*mzArr.length)]);
 	}	// printArrVal
 	
@@ -21,19 +28,34 @@ public class HomeWork0118 {
 	 * @return 생성된 비밀번호
 	 */
 	public char[] createPw() {
-		char[] pwArr = new char[8];
+		char[] pwArr = new char[PASSWORDLENGTH];
 		
 		for(int i = 0; i < pwArr.length; i++) {
 			int range = (int)(Math.random()*3);
 			switch (range) {
-			case 0: pwArr[i] = (char)((int)(Math.random()*10)+'0');		// (char)((Math.random()*10)+48);
+			case DECIMAL: pwArr[i] = (char)((int)(Math.random()*10)+'0');		// (char)((Math.random()*10)+48);
 				break;
-			case 1: pwArr[i] = (char)((Math.random()*26)+65);
+			case UPPERCASE: pwArr[i] = (char)((Math.random()*26)+65);
 				break;
-			case 2: pwArr[i] = (char)((Math.random()*26)+97);
-				break;
+			case LOWERCASE: pwArr[i] = (char)((Math.random()*26)+97);
+				break;	// break 생략 가능
 			}	// end switch~case
 		}	// end for
+		
+//		int num = 0;
+//		for(int i = 0; i < pwArr.length; i++) {
+//			num = (int)(Math.random()*122+1);
+//			if((num > 47 && num < 58) || (num > 64 && num < 91) || (num > 96 && num < 123)) {
+//				pwArr[i] = (char)num;
+//			} else {
+//				i--;
+//			}	// end else
+//		}	// end for
+		
+//		String password = "0123456789abcdefghijklmnopqrstuvwxyzABCDEFGHIJKLMNOPQRSTUVWXYZ!@#$%^&*()_+-=,./<>?~`";
+//		for(int i = 0; i < pwArr.length; i++) {
+//			pwArr[i] = password.charAt((int)(Math.random()*password.length()));
+//		}	// end for
 		
 		return pwArr;
 	}	// printPw
@@ -46,28 +68,33 @@ public class HomeWork0118 {
 	public String lotto() {
 		String result = "";
 	
-		int[] lotto = new int[6];
+		int[] lotto = new int[LOTTOLENGTH];
 		for(int i = 0; i < lotto.length; i++) {
 			lotto[i] = (int)(Math.random()*45+1);
-			for(int j = 0; j < i; j++) {
-				if(lotto[i] == lotto[j]) {	// 중복 제거
-					i--;
+			for(int j = 0; j < i; j++) {	// 발생된 난수가 이전 방에 존재하는지? 중복체크용 반복
+				if(lotto[i] == lotto[j]) {	// 현재의 방과 이전의 방 값이 같다면
+					i--;					// 현재 방의 값을 다시 설정하기 위해 외부 for 인덱스 줄이고,	
+//					break;					// 안쪽 for 빠져나간다.
 				}	// end if
 			}	// end for
 		}	// end for
 		
-		int max = 0;
-		for(int i = 0; i < lotto.length; i++) {
+		int temp = 0;
+		for(int i = 0; i < lotto.length; i++) {	// 오름차순 정렬
 			for(int j = 0; j < lotto.length; j++) {
 				if(lotto[i] < lotto[j]) {
-					max = lotto[i];
+					temp = lotto[i];
 					lotto[i] = lotto[j];
-					lotto[j] = max;
+					lotto[j] = temp;
 				} // end if
 			}	// end for
 		}	// end for
 		
-		result = Arrays.toString(lotto);
+		for(int i = 0; i < lotto.length; i++) {
+			result += lotto[i] + " ";
+		}
+		
+//		result = Arrays.toString(lotto);
 		return result;
 	}	// lotto
 
