@@ -81,7 +81,11 @@ public class HomeWork0119 {
 			result = Locale.CANADA;
 		}	// end if
 		
+		// Locale 배열을 사용할 수도 있다.
+//		Locale[] loc = {Locale.KOREA, Locale.US, Locale.JAPAN, Locale.CANADA};
+		
 		SimpleDateFormat toDay = new SimpleDateFormat("yyyy-MM-dd kk:mm:ss EEEE", result);
+//		SimpleDateFormat toDay = new SimpleDateFormat("yyyy-MM-dd kk:mm:ss EEEE", loc[namtionNum]);
 		
 		return toDay.format(date);
 	}	// returnDate
@@ -93,7 +97,7 @@ public class HomeWork0119 {
 		String csvData = "고한별,김도원,김동섭.김무영~김현종 박시현,손지민,김병년.김일신";
 		System.out.println(hw.returnBakName("test.last.jpg"));
 		System.out.println(Arrays.toString(hw.returnName(csvData)));
-		System.out.println(hw.returnDate(4));
+		System.out.println(hw.returnDate(3));
 
 	}	// main
 
