@@ -95,9 +95,7 @@ public class StudentInfo extends JFrame {
 		JList<String> jl = new JList<String>(dlm);
 		dlm.addElement("1,진수현,남,010-1234-5678");
 		dlm.addElement("2,김동섭,남,010-2345-6789");
-
 		jl.setBorder(new LineBorder(Color.gray));
-		
 		jl.setBounds(260, 10, 200, 200);
 		add(jl);
 	}	// addJList
