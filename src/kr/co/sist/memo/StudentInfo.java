@@ -30,6 +30,7 @@ public class StudentInfo extends JFrame {
 		addJButton();
 		
 		setBounds(500, 100, 500, 300);
+		setResizable(false);	// 수동 배치 후 크기 변경 시 컴포넌트들이 움직이지 않으므로 크기 변경 제어
 		setVisible(true);
 		setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
 	}	// StudentInfo
