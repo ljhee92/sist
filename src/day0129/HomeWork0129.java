@@ -87,7 +87,7 @@ public class HomeWork0129 extends JFrame {
 				dispose();
 			}	// windowClosing
 		});
-	}	// close
+	}	// windowClose
 
 	public static void main(String[] args) {
 		new HomeWork0129();
