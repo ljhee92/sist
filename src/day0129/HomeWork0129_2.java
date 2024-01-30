@@ -35,13 +35,13 @@ public class HomeWork0129_2 extends JFrame implements ActionListener {
 		jpfPw = new JPasswordField();
 		jlResult = new JLabel();
 		
-		jtfId.setBorder(new TitledBorder("아이디"));
-		jpfPw.setBorder(new TitledBorder("비밀번호"));
-		jlResult.setBorder(new TitledBorder("결과"));
-		
 		JScrollPane jspId = new JScrollPane(jtfId);
 		JScrollPane jspPw = new JScrollPane(jpfPw);
 		JScrollPane jspResult = new JScrollPane(jlResult);
+		
+		jspId.setBorder(new TitledBorder("아이디"));
+		jspPw.setBorder(new TitledBorder("비밀번호"));
+		jspResult.setBorder(new TitledBorder("결과"));
 		
 		add(jspId);
 		add(jspPw);
@@ -52,7 +52,7 @@ public class HomeWork0129_2 extends JFrame implements ActionListener {
 		jlResult.setText("아이디와 비밀번호를 입력하세요.");
 		
 		setLayout(new GridLayout(3, 1));
-		setBounds(100, 100, 400, 300);
+		setBounds(100, 100, 300, 200);
 		setResizable(false);
 		setVisible(true);
 	}	// addComponent
