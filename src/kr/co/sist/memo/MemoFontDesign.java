@@ -1,7 +1,5 @@
 package kr.co.sist.memo;
 
-import java.awt.Font;
-
 import javax.swing.DefaultListModel;
 import javax.swing.JButton;
 import javax.swing.JDialog;
@@ -49,7 +47,6 @@ public class MemoFontDesign extends JDialog {
 		JScrollPane jspSize = new JScrollPane(jlSize);
 		
 		jlblEx = new JLabel("AaBbYyZz");
-		jlblEx.setFont(new Font("맑은 고딕", Font.PLAIN, 14));
 		jlblEx.setBorder(new TitledBorder("보기"));
 		
 		jbtnCheck = new JButton("확인");

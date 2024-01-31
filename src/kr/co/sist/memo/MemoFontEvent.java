@@ -12,8 +12,7 @@ public class MemoFontEvent extends WindowAdapter implements ActionListener, Mous
 
 	private MemoFontDesign mfd;
 	private String font = "맑은 고딕";
-	private int style = Font.PLAIN;
-	private int size = 14;
+	private int style = Font.PLAIN, size = 14;
 	
 	public MemoFontEvent(MemoFontDesign mfd) {
 		this.mfd = mfd;
@@ -98,6 +97,42 @@ public class MemoFontEvent extends WindowAdapter implements ActionListener, Mous
 	private void closeFont() {
 		mfd.dispose();
 	}	// closeFont
+
+	@Override
+	public void windowActivated(WindowEvent e) {
+		setExDefaultFont();
+		setExSelectedFont();
+		setExSelectedStyle();
+		setExSelectedSize();
+	}	// windowOpened
+	
+	private void setExDefaultFont() {
+		mfd.getJlblEx().setFont(mfd.getJta().getFont());
+	}	// setExFont()
+	
+	private void setExSelectedFont() {
+		mfd.getJtfFont().setText(mfd.getJta().getFont().getName());
+	}	// setExSelectedFont
+	
+	private void setExSelectedStyle() {
+		switch(mfd.getJta().getFont().getStyle()) {
+		case Font.PLAIN :
+			mfd.getJtfStyle().setText("일반");
+			break;
+		case Font.BOLD :
+			mfd.getJtfStyle().setText("굵게");
+			break;
+		case Font.ITALIC :
+			mfd.getJtfStyle().setText("기울임꼴");
+			break;
+		case Font.BOLD | Font.ITALIC :
+			mfd.getJtfStyle().setText("굵은 기울임꼴");
+		}	// end switch~case
+	}	// setExSelectedStyle
+	
+	private void setExSelectedSize() {
+		mfd.getJtfSize().setText(String.valueOf(mfd.getJta().getFont().getSize()));
+	}	// setExSelectedSize
 
 	@Override
 	public void windowClosing(WindowEvent e) {

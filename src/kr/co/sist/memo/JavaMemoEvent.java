@@ -1,6 +1,7 @@
 package kr.co.sist.memo;
 
 import java.awt.FileDialog;
+import java.awt.Font;
 import java.awt.event.ActionEvent;
 import java.awt.event.ActionListener;
 import java.awt.event.WindowAdapter;
@@ -43,6 +44,7 @@ public class JavaMemoEvent extends WindowAdapter implements ActionListener {
 	
 	private void newMemo() {
 		jm.getJta().setText("");
+		jm.getJta().setFont(new Font("맑은 고딕", Font.PLAIN, 14));
 	}	// newJta
 	
 	private void openMemo() {

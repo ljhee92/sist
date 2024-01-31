@@ -1,5 +1,7 @@
 package kr.co.sist.memo;
 
+import java.awt.Font;
+
 import javax.swing.JFrame;
 import javax.swing.JMenu;
 import javax.swing.JMenuBar;
@@ -36,6 +38,7 @@ public class JavaMemo extends JFrame {
 		
 		jta = new JTextArea();
 		JScrollPane jsp = new JScrollPane(jta);
+		jta.setFont(new Font("맑은 고딕", Font.PLAIN, 14));
 		jta.setLineWrap(true);
 		
 		jmFile.add(jmNew);
