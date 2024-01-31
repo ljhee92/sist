@@ -7,7 +7,7 @@ import javax.swing.JButton;
 import javax.swing.JFrame;
 import javax.swing.JPanel;
 
-import kr.co.sist.memo.StudentInfo;
+import kr.co.sist.memo.ex.StudentInfo;
 
 /**
  *  1. Window Component를 상속, 이벤트 처리 Listener를 구현
