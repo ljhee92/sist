@@ -1,4 +1,4 @@
-package kr.co.sist.memo;
+package day0130.HW;
 
 public class RunStudentInfo {
 

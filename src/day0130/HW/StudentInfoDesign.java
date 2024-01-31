@@ -1,4 +1,4 @@
-package kr.co.sist.memo;
+package day0130.HW;
 
 import java.awt.Color;
 
@@ -20,8 +20,10 @@ public class StudentInfoDesign extends JFrame {
 	
 	private JTextField jtfName, jtfPhoneNumber;
 	private DefaultComboBoxModel<Integer> dcbmAge;
+	private JComboBox<Integer> jcbAge;
 	private JRadioButton jrbM, jrbW;
-	private DefaultListModel<String> dlm;
+	private DefaultListModel<String> dlmList;
+	private JList<String> jlList;
 	private JButton jbtnAdd, jbtnEdit, jbtnRemove, jbtnExit;
 	
 	public StudentInfoDesign() {
@@ -57,7 +59,7 @@ public class StudentInfoDesign extends JFrame {
 		JLabel[] jlArr = new JLabel[label.length];
 		for(int i = 0; i < label.length; i++) {
 			jlArr[i] = new JLabel(label[i]);
-			jlArr[i].setBounds(20, (i+1)*35, 180, 50);
+			jlArr[i].setBounds(20, (i+1)*35, 60, 45);
 			add(jlArr[i]);
 		}	// end for
 	}	// addJLabel
@@ -65,19 +67,19 @@ public class StudentInfoDesign extends JFrame {
 	public void addJTextField() {
 		jtfName = new JTextField(10);
 		jtfPhoneNumber = new JTextField(15);
-		jtfName.setBounds(60, 45, 150, 30);
-		jtfPhoneNumber.setBounds(75, 150, 150, 30);
+		jtfName.setBounds(80, 40, 150, 30);
+		jtfPhoneNumber.setBounds(80, 150, 150, 30);
 		add(jtfName);
 		add(jtfPhoneNumber);
 	}	// addJTextField
 	
 	public void addJComboBox() {
 		dcbmAge = new DefaultComboBoxModel<Integer>();
-		JComboBox<Integer> jcbAge = new JComboBox<Integer>(dcbmAge);
+		jcbAge = new JComboBox<Integer>(dcbmAge);
 		for(int i = 20; i < 41; i++) {
 			dcbmAge.addElement(i);
 		}	// end for
-		jcbAge.setBounds(60, 82, 150, 30);
+		jcbAge.setBounds(80, 78, 150, 30);
 		add(jcbAge);
 	}	// addJComboBox
 	
@@ -87,19 +89,19 @@ public class StudentInfoDesign extends JFrame {
 		ButtonGroup jrb = new ButtonGroup();
 		jrb.add(jrbM);
 		jrb.add(jrbW);
-		jrbM.setBounds(60, 115, 60, 30);
-		jrbW.setBounds(120, 115, 80, 30);
+		jrbM.setBounds(80, 112, 60, 30);
+		jrbW.setBounds(140, 112, 80, 30);
 		add(jrbM);
 		add(jrbW);
 	}	// addJRadioButton
 	
 	public void addJList() {
-		dlm = new DefaultListModel<String>();
-		JList<String> jl = new JList<String>(dlm);
-		dlm.addElement("진수현,20,남,010-1234-5678");
-		dlm.addElement("김동섭,21,남,010-2345-6789");
-		JScrollPane jsp = new JScrollPane(jl);
-		jl.setBorder(new LineBorder(Color.gray));
+		dlmList = new DefaultListModel<String>();
+		jlList = new JList<String>(dlmList);
+		dlmList.addElement("진수현,20,남,010-1234-5678");
+		dlmList.addElement("김동섭,21,남,010-2345-6789");
+		JScrollPane jsp = new JScrollPane(jlList);
+		jlList.setBorder(new LineBorder(Color.gray));
 		jsp.setBounds(260, 10, 200, 200);
 		add(jsp);
 	}	// addJList
@@ -131,6 +133,10 @@ public class StudentInfoDesign extends JFrame {
 		return dcbmAge;
 	}
 	
+	public JComboBox<Integer> getJcbAge() {
+		return jcbAge;
+	}
+
 	public JRadioButton getJrbM() {
 		return jrbM;
 	}
@@ -139,8 +145,12 @@ public class StudentInfoDesign extends JFrame {
 		return jrbW;
 	}
 
-	public DefaultListModel<String> getDlm() {
-		return dlm;
+	public DefaultListModel<String> getDlmList() {
+		return dlmList;
+	}
+
+	public JList<String> getJlList() {
+		return jlList;
 	}
 
 	public JButton getJbtnAdd() {
