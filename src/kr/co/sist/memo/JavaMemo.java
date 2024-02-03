@@ -12,12 +12,7 @@ import javax.swing.JTextArea;
 @SuppressWarnings("serial")
 public class JavaMemo extends JFrame {
 	
-	private JMenuItem jmNew;
-	private JMenuItem jmOpen;
-	private JMenuItem jmSave;
-	private JMenuItem jmClose;
-	private JMenuItem jmFont;
-	private JMenuItem jmInfo;
+	private JMenuItem jmNew, jmOpen, jmSave, jmClose, jmFont, jmInfo;
 	private JTextArea jta;
 	
 	public JavaMemo() {

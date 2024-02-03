@@ -16,7 +16,7 @@ public class MemoFontDesign extends JDialog {
 	private JTextField jtfFont, jtfStyle, jtfSize;
 	private DefaultListModel<String> dlmFont, dlmStyle, dlmSize;
 	private JList<String> jlFont, jlStyle, jlSize;
-	private JLabel jlblEx;
+	private JLabel jlPreview;
 	private JButton jbtnCheck, jbtnCancel;
 	private JTextArea jta;
 	
@@ -46,13 +46,14 @@ public class MemoFontDesign extends JDialog {
 		JScrollPane jspStyle = new JScrollPane(jlStyle);
 		JScrollPane jspSize = new JScrollPane(jlSize);
 		
-		jlblEx = new JLabel("AaBbYyZz");
-		jlblEx.setBorder(new TitledBorder("보기"));
+		jta = jm.getJta();
+
+		jlPreview = new JLabel("AaBbYyZz");
+		jlPreview.setFont(jta.getFont());
+		jlPreview.setBorder(new TitledBorder("보기"));
 		
 		jbtnCheck = new JButton("확인");
 		jbtnCancel = new JButton("취소");
-		
-		jta = jm.getJta();
 		
 		dlmFont.addElement("고딕체");
 		dlmFont.addElement("궁서체");
@@ -86,7 +87,7 @@ public class MemoFontDesign extends JDialog {
 		jspStyle.setBounds(175, 55, 120, 150);
 		jspSize.setBounds(315, 55, 70, 150);
 		
-		jlblEx.setBounds(173, 215, 215, 100);
+		jlPreview.setBounds(173, 215, 215, 100);
 		
 		jbtnCheck.setBounds(180, 325, 90, 25);
 		jbtnCancel.setBounds(290, 325, 90, 25);
@@ -103,7 +104,7 @@ public class MemoFontDesign extends JDialog {
 		add(jspStyle);
 		add(jspSize);
 		
-		add(jlblEx);
+		add(jlPreview);
 		
 		add(jbtnCheck);
 		add(jbtnCancel);
@@ -161,8 +162,8 @@ public class MemoFontDesign extends JDialog {
 		return jlSize;
 	}
 
-	public JLabel getJlblEx() {
-		return jlblEx;
+	public JLabel getJlPreview() {
+		return jlPreview;
 	}
 
 	public JButton getJbtnCheck() {

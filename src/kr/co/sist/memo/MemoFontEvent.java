@@ -8,45 +8,78 @@ import java.awt.event.MouseListener;
 import java.awt.event.WindowAdapter;
 import java.awt.event.WindowEvent;
 
+import javax.swing.JTextArea;
+import javax.swing.JTextField;
+
 public class MemoFontEvent extends WindowAdapter implements ActionListener, MouseListener {
 
 	private MemoFontDesign mfd;
-	private String font = "맑은 고딕";
-	private int style = Font.PLAIN, size = 14;
+	private String name;
+	private int style, size;
+	private JTextField jtfFont, jtfStyle, jtfSize;
+	private JTextArea jta;
 	
 	public MemoFontEvent(MemoFontDesign mfd) {
 		this.mfd = mfd;
+		
+		jtfFont = mfd.getJtfFont();
+		jtfStyle = mfd.getJtfStyle();
+		jtfSize = mfd.getJtfSize();
+
+		jta = mfd.getJta();
+		
+		name = jta.getFont().getName();
+		style = jta.getFont().getStyle();
+		size = jta.getFont().getSize();
+		
+		jtfFont.setText(name);
+		
+		switch(jta.getFont().getStyle()) {
+		case Font.PLAIN :
+			jtfStyle.setText("일반");
+			break;
+		case Font.BOLD :
+			jtfStyle.setText("굵게");
+			break;
+		case Font.ITALIC :
+			jtfStyle.setText("기울임꼴");
+			break;
+		case Font.BOLD | Font.ITALIC :
+			jtfStyle.setText("굵은 기울임꼴");
+		}	// end switch~case
+		
+		jtfSize.setText(String.valueOf(size));
 	}	// MemoFontEvent
 	
 	@Override
-	public void mouseClicked(MouseEvent me) {
+	public void mouseReleased(MouseEvent me) {
 		switch(me.getButton()){
 		case MouseEvent.BUTTON1 :
 			if(me.getSource() == mfd.getJlFont()) {
-				setFont();
+				setJtfFont();
 			}	// end if
 			
 			if(me.getSource() == mfd.getJlStyle()) {
-				setStyle();
+				setJtfStyle();
 			}	// end if
 			
 			if(me.getSource() == mfd.getJlSize()) {
-				setSize();
+				setJtfSize();
 			}	// end if
 		}	// end switch~case
 	}	// mouseClicked
 	
-	private void setFont() {
+	private void setJtfFont() {
 		int indFont = mfd.getJlFont().getSelectedIndex();
 		if(indFont != -1) {
-			String selectFont = mfd.getDlmFont().elementAt(indFont);
-			mfd.getJtfFont().setText(selectFont);
-			this.font = selectFont;
-			mfd.getJlblEx().setFont(new Font(this.font, this.style, this.size));
+			String selectName = mfd.getDlmFont().elementAt(indFont);
+			mfd.getJtfFont().setText(selectName);
+			this.name = selectName;
+			mfd.getJlPreview().setFont(new Font(this.name, style, size));
 		}	// end if
 	}	// setFont
 	
-	private void setStyle() {
+	private void setJtfStyle() {
 		int indStyle = mfd.getJlStyle().getSelectedIndex();
 		if(indStyle != -1) {
 			String selectStyle = mfd.getDlmStyle().elementAt(indStyle);
@@ -64,17 +97,17 @@ public class MemoFontEvent extends WindowAdapter implements ActionListener, Mous
 			case "굵은 기울임꼴" :
 				this.style = Font.BOLD | Font.ITALIC;
 			}	// switch~case
-			mfd.getJlblEx().setFont(new Font(this.font, this.style, this.size));
+			mfd.getJlPreview().setFont(new Font(name, this.style, size));
 		}	// end if
 	}	// setStyle
 	
-	private void setSize() {
+	private void setJtfSize() {
 		int indSize = mfd.getJlSize().getSelectedIndex();
 		if(indSize != -1) {
 			String selectSize = mfd.getDlmSize().elementAt(indSize);
 			mfd.getJtfSize().setText(selectSize);
 			this.size = Integer.parseInt(selectSize);
-			mfd.getJlblEx().setFont(new Font(this.font, this.style, this.size));
+			mfd.getJlPreview().setFont(new Font(name, style, this.size));
 		}	// end if
 	}	// setSize
 
@@ -90,7 +123,7 @@ public class MemoFontEvent extends WindowAdapter implements ActionListener, Mous
 	}	// actionPerformed
 	
 	private void applyFont() {
-		mfd.getJta().setFont(new Font(this.font, this.style, this.size));
+		mfd.getJta().setFont(new Font(this.name, this.style, this.size));
 		mfd.dispose();
 	}	// applyFont
 	
@@ -99,53 +132,17 @@ public class MemoFontEvent extends WindowAdapter implements ActionListener, Mous
 	}	// closeFont
 
 	@Override
-	public void windowActivated(WindowEvent e) {
-		setExDefaultFont();
-		setExSelectedFont();
-		setExSelectedStyle();
-		setExSelectedSize();
-	}	// windowOpened
-	
-	private void setExDefaultFont() {
-		mfd.getJlblEx().setFont(mfd.getJta().getFont());
-	}	// setExFont()
-	
-	private void setExSelectedFont() {
-		mfd.getJtfFont().setText(mfd.getJta().getFont().getName());
-	}	// setExSelectedFont
-	
-	private void setExSelectedStyle() {
-		switch(mfd.getJta().getFont().getStyle()) {
-		case Font.PLAIN :
-			mfd.getJtfStyle().setText("일반");
-			break;
-		case Font.BOLD :
-			mfd.getJtfStyle().setText("굵게");
-			break;
-		case Font.ITALIC :
-			mfd.getJtfStyle().setText("기울임꼴");
-			break;
-		case Font.BOLD | Font.ITALIC :
-			mfd.getJtfStyle().setText("굵은 기울임꼴");
-		}	// end switch~case
-	}	// setExSelectedStyle
-	
-	private void setExSelectedSize() {
-		mfd.getJtfSize().setText(String.valueOf(mfd.getJta().getFont().getSize()));
-	}	// setExSelectedSize
-
-	@Override
 	public void windowClosing(WindowEvent e) {
 		mfd.dispose();
 	}	// windowClosing
-	
+
 	@Override
-	public void mousePressed(MouseEvent me) {
+	public void mouseClicked(MouseEvent me) {
 		
 	}
 	
 	@Override
-	public void mouseReleased(MouseEvent me) {
+	public void mousePressed(MouseEvent me) {
 		
 	}
 	
