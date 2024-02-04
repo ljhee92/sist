@@ -2,28 +2,33 @@ package study.week3;
 
 import javax.swing.JButton;
 import javax.swing.JDialog;
+import javax.swing.JScrollPane;
+import javax.swing.JTextArea;
 import javax.swing.JTextField;
 import javax.swing.border.TitledBorder;
 
 @SuppressWarnings("serial")
 public class WriteDesign extends JDialog {
 	
-	private JTextField jtfTitle, jtfContents;
+	private JTextField jtfTitle;
+	private JTextArea jtfContents;
 	private JButton jbtnApply, jbtnWriteExit;
 	
 	public WriteDesign(BoardDesign bd, LoginDesign ld) {
 		super(bd, "글쓰기", true);
 		
 		jtfTitle = new JTextField();
-		jtfContents = new JTextField();
+		jtfContents = new JTextArea();
+		JScrollPane jsp = new JScrollPane(jtfContents);
+
 		jbtnApply = new JButton("등록");
 		jbtnWriteExit = new JButton("취소");
 		
 		jtfTitle.setBorder(new TitledBorder("제목"));
-		jtfContents.setBorder(new TitledBorder("내용"));
+		jsp.setBorder(new TitledBorder("내용"));
 		
 		jtfTitle.setBounds(15, 10, 470, 40);
-		jtfContents.setBounds(15, 50, 470, 280);
+		jsp.setBounds(15, 50, 470, 280);
 		jbtnApply.setBounds(190, 335, 60, 30);
 		jbtnWriteExit.setBounds(260, 335, 60, 30);
 		
@@ -32,7 +37,7 @@ public class WriteDesign extends JDialog {
 		jbtnWriteExit.addActionListener(we);
 		
 		add(jtfTitle);
-		add(jtfContents);
+		add(jsp);
 		add(jbtnApply);
 		add(jbtnWriteExit);
 		
@@ -47,7 +52,7 @@ public class WriteDesign extends JDialog {
 		return jtfTitle;
 	}
 
-	public JTextField getJtfContents() {
+	public JTextArea getJtfContents() {
 		return jtfContents;
 	}
 

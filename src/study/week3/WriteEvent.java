@@ -25,7 +25,7 @@ public class WriteEvent extends WindowAdapter implements ActionListener {
 			
 			bd.getJlbTitle().setText(wd.getJtfTitle().getText());
 			bd.getJlbWriter().setText(ld.getJtfLogID().getText().trim());
-			bd.getJlbContents().setText(wd.getJtfContents().getText());
+			bd.getJtaContents().setText(wd.getJtfContents().getText());
 			
 			wd.dispose();
 		}	// end if
