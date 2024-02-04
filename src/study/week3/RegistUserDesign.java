@@ -54,6 +54,7 @@ public class RegistUserDesign extends JFrame {
 		add(jpBtn);
 		
 		setBounds(100, 100, 300, 250);
+		setResizable(false);
 		setVisible(true);
 		
 	}	// RegistUser

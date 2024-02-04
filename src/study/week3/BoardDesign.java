@@ -48,6 +48,7 @@ public class BoardDesign extends JDialog {
 		
 		setLayout(null);
 		setBounds(100, 100, 500, 400);
+		setResizable(false);
 		setVisible(true);
 		
 	}	// BoardDesign

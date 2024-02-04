@@ -57,6 +57,7 @@ public class LoginDesign extends JDialog {
 		add(jpBtn);
 		
 		setBounds(100, 100, 300, 250);
+		setResizable(false);
 		setVisible(true);
 		
 	}	// LoginDesign

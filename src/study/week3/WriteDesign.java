@@ -38,6 +38,7 @@ public class WriteDesign extends JDialog {
 		
 		setLayout(null);
 		setBounds(bd.getX()+50, bd.getY()+50, 500, 400);
+		setResizable(false);
 		setVisible(true);
 		
 	}	// Write
