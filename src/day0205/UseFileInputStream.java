@@ -13,7 +13,7 @@ public class UseFileInputStream {
 	public UseFileInputStream() throws IOException {
 		
 		// 1. File 생성
-		File file = new File("/Users/juhee/eclipse-workspace/sist/temp/java_read.rtf");
+		File file = new File("/Users/juhee/eclipse-workspace/sist/temp/java_read.txt");
 		
 		if(!file.exists()) {
 			JOptionPane.showMessageDialog(null, "파일명이나 경로를 확인해주세요.");

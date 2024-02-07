@@ -9,7 +9,7 @@ public class UseFileEx {
 	public static void main(String[] args) {
 		
 		try {
-			String filePathName = JOptionPane.showInputDialog("삭제할 파일의 경로와 파일명을 입력하세요.", "/Users/juhee/eclipse-workspace/sist/temp/jh.rtf");
+			String filePathName = JOptionPane.showInputDialog("삭제할 파일의 경로와 파일명을 입력하세요.", "/Users/juhee/eclipse-workspace/sist/temp/jh.txt");
 			
 			File file = new File(filePathName);
 			

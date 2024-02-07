@@ -13,7 +13,7 @@ public class UseFile {
 	public static void main(String[] args) {
 		
 		// 1. 생성
-		File file = new File("/Users/juhee/eclipse-workspace/sist/temp/java_read.rtf");
+		File file = new File("/Users/juhee/eclipse-workspace/sist/temp/java_read.txt");
 		System.out.println(file);
 	
 		if(!file.exists()) {
