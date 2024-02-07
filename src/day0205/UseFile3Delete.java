@@ -2,7 +2,7 @@ package day0205;
 
 import java.io.File;
 
-public class UseFile3 {
+public class UseFile3Delete {
 
 	public static void main(String[] args) {
 		
