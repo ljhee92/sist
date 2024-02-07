@@ -13,7 +13,7 @@ public class UseBufferedWriter {
 	public UseBufferedWriter() {
 		
 		// 1. 파일 생성
-		File file = new File("C:/dev/temp/java_write3.txt");
+		File file = new File("/Users/juhee/eclipse-workspace/sist/temp/java_write3.txt");
 		
 		// 2. 스트림 생성
 		try(BufferedWriter bw = new BufferedWriter(new FileWriter(file))) {

@@ -12,7 +12,7 @@ public class UseFileWriter {
 	public UseFileWriter() throws IOException {
 		
 		// 1. 파일 생성
-		File file = new File("c:/dev/temp/java_write2.txt");
+		File file = new File("/Users/juhee/eclipse-workspace/sist/temp/java_write2.txt");
 		
 		// 2. 스트림 생성
 		FileWriter fw = null;

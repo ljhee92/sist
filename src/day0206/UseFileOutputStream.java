@@ -12,7 +12,7 @@ public class UseFileOutputStream {
 	public UseFileOutputStream() throws IOException {
 		
 		// 1. 파일 생성
-		File file = new File("c:/dev/temp/java_write.txt");
+		File file = new File("/Users/juhee/eclipse-workspace/sist/temp/jh.txt");
 		
 		// 2. 스트림 생성 : 스트림이 생성되면 목적지에 파일이 존재하면 덮어쓰고, 없으면 생성한다.
 		FileOutputStream fos = null;

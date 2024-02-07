@@ -17,7 +17,7 @@ public class TestStream {
 		// 단, C:/dev/temp/java_write4.txt 파일이 존재하지 않으면 파일을 생성하고,
 		// 존재한다면 덮어쓸 것인지를 물어본 후 파일에 덮어쓴다.
 		
-		File file = new File("C:/dev/temp/java_write4.txt");
+		File file = new File("/Users/juhee/eclipse-workspace/sist/temp/java_write4.txt");
 		
 		if(file.exists()) {
 			int option = JOptionPane.showConfirmDialog(null, file.getName() + " 파일이 이미 존재합니다. 덮어 쓸까요?");

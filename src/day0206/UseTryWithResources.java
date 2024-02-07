@@ -8,7 +8,6 @@ public class UseTryWithResources {
 
 	public static void main(String[] args) {
 		
-		
 		// 키보드의 입력값을 줄 단위로 읽기
 		// 개발자가 close하지 않아도 JVM에서 모든 스트림을 close()해준다.
 		try(BufferedReader br = new BufferedReader(new InputStreamReader(System.in))) {

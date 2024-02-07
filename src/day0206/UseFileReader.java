@@ -13,7 +13,7 @@ public class UseFileReader {
 	public UseFileReader() throws IOException {
 		
 		// 1. 파일 생성
-		File readFile = new File("C:/dev/temp/java_read.txt");
+		File readFile = new File("/Users/juhee/eclipse-workspace/sist/temp/java_read.txt");
 		
 		if(!readFile.exists()) {
 			System.out.println(readFile.getAbsolutePath() + "는 존재하지 않습니다.");
