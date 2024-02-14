@@ -10,6 +10,7 @@ public class Baseball {
 	public static final int PLAY = 1;
 	public static final int EXIT = 2;
 	
+	
 	public void playGame() {
 		System.out.println("숫자 야구 게임을 시작합니다.");
 		playerChoice();
@@ -20,8 +21,7 @@ public class Baseball {
 			Scanner sc = new Scanner(System.in);
 			System.out.print("중복 없는 0~9 사이 숫자 세 개를 입력하세요(예: 1,2,3): ");
 			do {
-				String pl = sc.nextLine();
-				String[] plInputStr = pl.split(",");
+				String[] plInputStr = sc.nextLine().split(",");
 				int[] plInput = new int[3];
 				for(int i = 0; i < plInputStr.length; i++) {
 					plInput[i] = Integer.parseInt(plInputStr[i]);
@@ -40,7 +40,7 @@ public class Baseball {
 	
 	public boolean checkValid(int[] plInput) {
 		for(int i = 0; i < plInput.length; i++) {
-			if(plInput[i] < 0 || plInput[i] > 10) {
+			if(plInput[i] < 0 || plInput[i] > 9) {
 				return true;
 			}	// end if
 			for(int j = 0; j < i; j++) {
@@ -82,17 +82,17 @@ public class Baseball {
 	            }	// end for
 	        }	// end else
 	    }	// end for
-
-	    System.out.println(Arrays.toString(pcChoice) + " " + Arrays.toString(playerChoice));
-
+	    
+	    System.out.print(Arrays.toString(pcChoice) + " " + Arrays.toString(playerChoice));
+	    
 	    if(strike == 3) {
-	        System.out.println("3스트라이크");
+	        System.out.println(" 3스트라이크");
 	    } else if(strike == 0 && ball == 3) {
-	        System.out.println("3볼");
+	        System.out.println(" 3볼");
 	    } else if(strike > 0 && ball > 0) {
-	        System.out.println("1볼 1스트라이크");
+	        System.out.println(" 1볼 1스트라이크");
 	    } else {
-	        System.out.println("아웃");
+	        System.out.println(" 아웃");
 	    }	// end else 
 	    replayOrExit();
 	}	// compare
